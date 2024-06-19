@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 
-app = Flask(__name__, static_folder='static', template_folder='templates')
+# going to have to use this part in development to run the server with the /public thing
+app = Flask(__name__)
 
 @app.route('/')
 @app.route('/main')

@@ -1,5 +1,5 @@
 [build]
-  publish = "public"
+  publish = "static" 
   command = "python build.py"
   preBuild = "pip install -r requirements.txt"
   
