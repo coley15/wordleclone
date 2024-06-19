@@ -1,7 +1,6 @@
 [build]
-  publish = "public"  # Directory where built files will go
-  command = "pip install -r requirements.txt && flask build && flask run --host=0.0.0.0 --port=$PORT"
-
+  publish = "public" 
+  command = "pip install -r requirements.txt && flask run --host=0.0.0.0 --port=$PORT"
 [context.production.environment]
   FLASK_APP = "app.py"
   FLASK_ENV = "production"
