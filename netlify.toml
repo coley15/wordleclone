@@ -1,6 +1,5 @@
 [build]
   publish = "public"
   preBuild = "pip install -r requirements.txt"
-  command = "gunicorn app:app --bind 0.0.0.0:5000"  # Use Gunicorn
   
 [context.production.environment]
