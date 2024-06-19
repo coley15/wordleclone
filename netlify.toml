@@ -1,6 +1,5 @@
 [build]
-  publish = "public" 
-  command = pip install -r requirements.txt && flask run --host=0.0.0.0 --port=$PORT
+  publish = "public"
+  preBuild = "pip install -r requirements.txt"
+  command = "flask run --host=0.0.0.0 --port=$PORT"
 [context.production.environment]
-  FLASK_APP = "app.py"
-  FLASK_ENV = "production"
