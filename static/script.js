@@ -1,9 +1,11 @@
 const keyboard = document.querySelector('.keyboard-container')
 const tiles = document.querySelectorAll('.tile')
 const tilesArray = Array.from(tiles)
-const wordList = ["apple", "banana", "cherry", "grape", "orange"];
+const wordList = ["slave", "world", "hello", "apple", "grape", "water", "mouse"];
 
 const randomWord = getRandomWord(wordList);
+
+console.log(randomWord)
 
 let currentTile = 0;
 let currentRow = 0;
@@ -19,7 +21,24 @@ function handle_word_submisson(randomWord) {
 
     const currentRowTiles = tilesArray.slice(currentRow * 5, (currentRow * 5) + 5);
 
-    const user_word = currentRowTiles.map(tile => tile.innerHTML).join('')
+    const userWord = currentRowTiles.map(tile => tile.innerHTML).join('')
+
+    for (let i = 0; i < userWord.length; i++) {
+
+        // lowercase due to the fact that the letters are being represented as uppercase
+        let currentLetter = userWord[i].toLowerCase()
+
+        if (currentLetter === randomWord[i]) {
+            currentRowTiles[i].classList.add('correct')
+        }
+        else if (randomWord.includes(currentLetter)) {
+            currentRowTiles[i].classList.add('close')
+        }
+        else {
+            currentRowTiles[i].classList.add('wrong')
+        }
+    
+    }
 
     currentRow++;
     currentTile = 0;
@@ -36,7 +55,6 @@ function delete_letter() {
 
         console.log(currentTile)
     }
-
 }
 
 // add an event if any clicks occur on the keyboard
