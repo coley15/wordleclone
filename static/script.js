@@ -5,8 +5,6 @@ const wordList = ["slave", "world", "hello", "apple", "grape", "water", "mouse"]
 
 const randomWord = getRandomWord(wordList);
 
-console.log(randomWord)
-
 let currentTile = 0;
 let currentRow = 0;
 
@@ -44,7 +42,6 @@ function handle_word_submisson(randomWord) {
     currentTile = 0;
 
 }
-
 function delete_letter() {
 
     let tileToDelete = currentRow * 5 + currentTile;
@@ -56,7 +53,6 @@ function delete_letter() {
         console.log(currentTile)
     }
 }
-
 // add an event if any clicks occur on the keyboard
 keyboard.addEventListener('click', (event) => {
     // check if user clicks a key and which one
@@ -67,7 +63,6 @@ keyboard.addEventListener('click', (event) => {
                 handle_word_submisson(randomWord)
             }
         }
-
         else if (event.target.innerHTML === "Delete") {
             delete_letter();
         }
