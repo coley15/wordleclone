@@ -1,7 +1,9 @@
 const keyboard = document.querySelector('.keyboard-container')
 const tiles = document.querySelectorAll('.tile')
 const tilesArray = Array.from(tiles)
-const wordList = ["slave", "world", "hello", "apple", "grape", "water", "mouse"];
+const wordList = ["world", "hello", "apple", "grape", "water", "mouse"];
+
+
 
 const randomWord = getRandomWord(wordList);
 
@@ -80,4 +82,6 @@ keyboard.addEventListener('click', (event) => {
         }
     }
 });
+
+
 
